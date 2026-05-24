@@ -17,11 +17,11 @@ export async function addMeeting(formData: FormData) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return
 
-  // Combine date and time to ISO string
-  const start_time = new Date(`${dateStr}T${timeStr}:00`).toISOString()
+  // Combine date and time to ISO string (Baku is UTC+4)
+  const start_time = new Date(`${dateStr}T${timeStr}:00+04:00`).toISOString()
   
   // Assume meeting takes 1 hour by default
-  const endTimeDate = new Date(`${dateStr}T${timeStr}:00`)
+  const endTimeDate = new Date(`${dateStr}T${timeStr}:00+04:00`)
   endTimeDate.setHours(endTimeDate.getHours() + 1)
   const end_time = endTimeDate.toISOString()
 
