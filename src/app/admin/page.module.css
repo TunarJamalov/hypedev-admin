@@ -1,0 +1,231 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.welcomeBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.welcomeBar h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.25rem 0;
+  color: var(--foreground);
+}
+
+.welcomeBar p {
+  color: var(--foreground-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.goToBoard {
+  background-color: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--foreground);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.goToBoard:hover {
+  background-color: #333;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.statCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--foreground-muted);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  line-height: 1;
+}
+
+.statDot {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.panel {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.panelHeader h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.viewAll {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: opacity 0.2s;
+}
+
+.viewAll:hover { opacity: 0.8; }
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.taskRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #111;
+  border: 1px solid #222;
+}
+
+.taskInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot.todo { background-color: #ef4444; }
+.dot.in_progress { background-color: #f59e0b; }
+.dot.done { background-color: #22c55e; }
+
+.taskTitle {
+  font-size: 0.85rem;
+  color: var(--foreground);
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 1rem;
+}
+
+.badge.todo { background-color: rgba(239,68,68,0.15); color: #ef4444; }
+.badge.in_progress { background-color: rgba(245,158,11,0.15); color: #f59e0b; }
+.badge.done { background-color: rgba(34,197,94,0.15); color: #22c55e; }
+
+.meetingList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.meetingRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #111;
+  border: 1px solid #222;
+}
+
+.meetingDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  min-width: 44px;
+}
+
+.meetDay {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3b82f6;
+  line-height: 1;
+}
+
+.meetMonth {
+  font-size: 0.65rem;
+  color: #3b82f6;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.meetTitle {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.meetTime {
+  font-size: 0.75rem;
+  color: var(--foreground-muted);
+  margin-top: 2px;
+}
+
+.empty {
+  color: var(--foreground-muted);
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 2rem 0;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .statsRow { grid-template-columns: 1fr 1fr; }
+  .twoCol { grid-template-columns: 1fr; }
+}

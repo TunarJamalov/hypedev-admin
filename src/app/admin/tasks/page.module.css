@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 120px);
+  gap: 1.25rem;
+}
+
+.projectHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.projectTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0 0 0.2rem 0;
+}
+
+.projectSub {
+  color: var(--foreground-muted);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.tabsBar {
+  display: flex;
+  gap: 0.25rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.35rem;
+  width: max-content;
+}
+
+.tab {
+  color: var(--foreground-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.4rem 0.85rem;
+  border-radius: 0.35rem;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.tab:hover {
+  color: var(--foreground);
+  background-color: var(--surface-hover);
+}
+
+.activeTab {
+  color: var(--foreground) !important;
+  background-color: var(--surface-hover);
+}
+
+.boardContainer {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 1rem;
+}
